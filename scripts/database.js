@@ -1,5 +1,5 @@
-database = {
-    paintColor: [
+const database = {
+    paintColors: [
         {
             id: 1,
             name: "Spring Green",
@@ -21,7 +21,7 @@ database = {
             price: "$125.25",
         },
     ],
-    interior: [
+    interiors: [
         {
             id: 1,
             name: "Beige Fabric",
@@ -43,7 +43,7 @@ database = {
             price: "$1005.25",
         },
     ],
-    technology: [
+    technologies: [
         {
             id: 1,
             name: "Basic Package (basic sound system)",
@@ -94,3 +94,23 @@ database = {
 }
 
 //create get functions to export all arrays of data
+
+export const getPaintColors = () => {
+    return database.paintColors.map(color => ({...color}))
+}
+
+export const getInteriors = () => {
+    return database.interiors.map(interior => ({...interior}))
+}
+
+export const getTech = () => {
+    return database.technologies.map(tech => ({...tech}))
+}
+
+export const getWheels = () => {
+    return database.wheels.map(wheel => ({...wheel}))
+}
+
+export const getOrders = () => {
+    return database.orders.map(order => ({...order}))
+}
