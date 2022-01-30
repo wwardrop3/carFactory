@@ -4,8 +4,23 @@ const wheels = getWheels()
 
 
 export const Wheels = () =>{
-    return `<h2>Wheels</h2>
-    ${wheelsList()}`
+
+    let html = `<h2>Wheels</h2>`
+    
+    html += `<select id = "resource">`
+
+    const listItemsArray = wheels.map(
+        (wheel) => {
+            html+=`<option value = "${wheel.id}">${wheel.name}</option>`
+        })
+    html+= listItemsArray.join("")
+    
+    html+=`</select>`
+    
+    return html
+
+
+
 }
 
 document.addEventListener(
@@ -20,14 +35,3 @@ document.addEventListener(
     }
 )
 
-const wheelsList = () => {
-    let html = `<select id = "resource">`
-
-    wheels.forEach(wheel => {
-        html += `<option value = "${wheel.id}">${wheel.name}</option>`
-        
-    })
-    html+=`<select>`
-
-    return html
-}
