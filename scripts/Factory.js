@@ -2,10 +2,22 @@ import { Interiors } from "./Interiors.js";
 import { Paints } from "./Paints.js";
 import { Technologies } from "./Technologies.js";
 import { Wheels } from "./Wheels.js";
+import { Orders } from "./Orders.js"
+import { addPurchase } from "./database.js";
 
-const mainContent = document.getElementById("content")
+document.addEventListener(
+    "click",
+    (event) => {
+        if(event.target.id = "orderButton"){
+            addPurchase()
+        }
 
-const renderHTML = () => {
+    }
+)
+
+
+//this function will output the page html 
+export const Factory = () => {
     return `<main>
 
     <nav>
@@ -27,9 +39,9 @@ const renderHTML = () => {
         </section>
     </article>
     
+    <article>
+        <button id = "orderButton">Place Car Order</button>
+        <div id = "orders">Custom Car Orders</div>
     </main>`
 }
-
-mainContent.innerHTML=renderHTML()
-
 
